@@ -1,1 +1,3 @@
 In this project, I used Natural Language Processing (NLP) methods to develop models for Azerbaijani language which make semantic and syntactic analysis and find similarity rate between two or more words, and show similar words to the inputted word. Firstly, I collected dataset using approximately 250 books written in Azerbaijani language. Then, I firstly trained, evaluated and optimized models using FastText and Word2Vec algorithms in Python. Finally, I used these models to create user-friendly website by the programming languages, HTML, CSS, JavaScript, and Python (Django).
+
+NOTE: Dataset is confidential, therefore, I do not share it here.
