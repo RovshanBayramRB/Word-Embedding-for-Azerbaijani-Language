@@ -105,3 +105,56 @@ Then open `http://127.0.0.1:8000/`.
 Startup is slow — all four models load into RAM before the first request is served.
 
 **Version note:** the training code uses `size=` for the embedding dimension, which gensim 4.0 renamed to `vector_size`. Pin gensim to 3.x, or update the parameter names.
+
+---
+
+## Repository structure
+
+```
+.
+├── manage.py                          # Django entry point
+│
+├── wordembedded_project/              # Project config
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── wordembedded/                      # Application
+│   ├── views.py                       # Similarity, most-similar, analogy handlers
+│   ├── urls.py                        # Route definitions
+│   ├── models.py
+│   ├── exten.py                       # Unused corpus helper
+│   ├── admin.py
+│   ├── apps.py
+│   ├── tests.py
+│   └── migrations/
+│       ├── 0001_initial.py
+│       ├── 0002_cars.py
+│       └── 0003_auto_20210205_1715.py
+│
+├── templates/
+│   ├── base.html                      # Shared layout
+│   ├── index.html                     # Landing page
+│   ├── CBOWW2V.html                   # Word2Vec CBOW
+│   ├── SGW2V.html                     # Word2Vec Skip-gram
+│   ├── CBOWFT.html                    # FastText CBOW
+│   ├── SGFT.html                      # FastText Skip-gram
+│   ├── authors.html
+│   └── SDP.html
+│
+├── Python Codes for Model Training/
+│   ├── Word Embedding.py              # Corpus cleaning + training all four models
+│   └── Word Embedding.ipynb           # Same, as a notebook
+│
+├── css/  js/  fonts/  images/         # Front-end assets
+├── bootstrap-4.1/  font-awesome-4.7/  font-awesome-5/  mdi-font/
+├── animsition/  wow/  slick/  lightbox2/  select2/
+├── chartjs/  vector-map/  progressbar/  circle-progress/
+├── bootstrap-progressbar/  counter-up/  countdown/
+├── css-hamburgers/  perfect-scrollbar/
+├── jquery-3.2.1.min.js
+├── jquery-ui.min.js
+├── base.css
+└── README.md
+```
